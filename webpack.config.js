@@ -1,13 +1,12 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.join('src', 'index.tsx'),
+  entry: path.join(__dirname, 'src', 'index'),
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist')
   },
   resolve: {
-    root: path.resolve('.'),
     extensions: [
       '.js', '.jsx', '.ts', '.tsx', '.css'
     ]
@@ -15,11 +14,22 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
       }
     ]
   }
