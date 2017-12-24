@@ -4,6 +4,7 @@
   "description": "my web site",
   "main": ".",
   "scripts": {
+    "start": "webpack-dev-server",
     "build:dev": "webpack",
     "build": "cross-env NODE_ENV=production webpack",
     "lint": "npm run lint:ts",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/nekko1119/nekko1119org#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
+    "jquery": "^3.2.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2"
