@@ -1,0 +1,17 @@
+.centering {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer {
+    background-color: #202020;
+    bottom: 0;
+    color: #707070;
+    height: 64px;
+    width: 100%;
+}
+
+.footerLink {
+    color: #707070;
+}

@@ -23,10 +23,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /bootstrap.*\.css$/,
+        include: [path.join(__dirname, 'node_modules', 'bootstrap')],
         use: [
           'style-loader',
           'css-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        include: [path.join(__dirname, 'src')],
+        use: [
+          'style-loader',
+          'css-loader?modules'
         ]
       },
       {

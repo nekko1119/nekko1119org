@@ -1,0 +1,18 @@
+.headerImage {
+    background: url(../../../image/main.jpg) center no-repeat;
+    background-size: cover;
+    height: 50vh;
+    margin-bottom: 0 !important; /* I don't know how to avoid !important */
+}
+
+.icon {
+    height: 128px;
+    width: 128px;
+    border-radius: 50% !important; /* same */
+}
+
+.serviceIcon {
+    height: 64px;
+    width: 64px;
+    border-radius: 50% !important; /* same */
+}
