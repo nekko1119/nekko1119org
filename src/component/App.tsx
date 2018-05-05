@@ -3,8 +3,8 @@ import * as React from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import { Application } from "./Application";
 import { Home } from "./Home";
-import * as styles from "./style.css";
 import { main } from "./main.css";
+import * as styles from "./style.css";
 
 const navbarId = "globalNavBarId";
 

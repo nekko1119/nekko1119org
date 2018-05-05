@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: path.join(__dirname, 'src', 'index'),
   output: {
     filename: 'bundle.js',
@@ -53,8 +55,14 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
+    }),
+    ...(process.env.NODE_ENV === 'production' ? [new webpack.optimize.AggressiveMergingPlugin()] : [])
   ],
+  optimization: {
+    minimizer: [
+      ...(process.env.NODE_ENV === 'production' ? [new UglifyJsPlugin()] : [])
+    ]
+  },
   devServer: {
     contentBase: '.',
     publicPath: '/dist/',
