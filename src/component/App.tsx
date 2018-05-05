@@ -22,7 +22,7 @@ const App = () => (
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/app" className="nav-link">
+              <Link to="/apps" className="nav-link">
                 App
               </Link>
             </li>
@@ -32,7 +32,7 @@ const App = () => (
 
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/app" component={Application} />
+        <Route exact path="/apps" component={Application} />
         <Route component={NotFound} />
       </Switch>
 
