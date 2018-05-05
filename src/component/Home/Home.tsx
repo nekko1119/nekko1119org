@@ -64,8 +64,10 @@ const Home = () => (
         <h5>プログラミング</h5>
         <p>
           主にC++とゲームプログラミングに興味があります<br />
-          C++の規格(よく分からない), テンプレートメタプログラミング(よく分からない), constexprによるコンパイル時計算(よく分からない),
-          Boost各種, GTest, Catch, CppCoreGuideline, Streams, RxCpp, DirectX, win32API, ...
+          興味があるだけで、詳しいわけではありません……<br />
+          C++の規格, テンプレートメタプログラミング, constexprによるコンパイル時計算,
+          Boost各種, GTest, Catch, CppCoreGuideline, Streams, RxCpp, DirectX, Win32API, ...<br />
+          ゲームプログラミングはComponent指向の設計や非同期Job,Levelなど、3DGraphics, Device Input、AI(NPCのルーチン)など
         </p>
         <p>
           また、より良いコードの書き方や設計に興味があります<br />
