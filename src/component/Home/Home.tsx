@@ -53,7 +53,7 @@ const Home = () => (
         </div>
       </div>
       <Service />
-      <div className="mx-5">
+      <div className={cx("mx-5", styles.content)}>
         <h3>仕事</h3>
         <p>
           仕事はWebフロントエンド開発をしています<br />

@@ -37,7 +37,8 @@ module.exports = {
         include: [path.join(__dirname, 'src')],
         use: [
           'style-loader',
-          'css-loader?modules'
+          'css-loader?modules',
+          'postcss-loader'
         ]
       },
       {
