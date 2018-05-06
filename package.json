@@ -10,7 +10,7 @@
     "lint": "npm run lint:ts",
     "lint:ts": "tslint --project ./ './src/**/*.{ts,tsx}'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dts": "tcm -o type src node_modules/bootstrap/dist/css/bootstrap.min.css"
+    "dts": "tcm -o type src"
   },
   "repository": {
     "type": "git",
