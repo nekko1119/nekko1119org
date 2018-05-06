@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -27,19 +28,21 @@ module.exports = {
       {
         test: /bootstrap.*\.css$/,
         include: [path.join(__dirname, 'node_modules', 'bootstrap')],
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
         test: /\.css$/,
         include: [path.join(__dirname, 'src')],
-        use: [
-          'style-loader',
-          'css-loader?modules',
-          'postcss-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            `css-loader?modules${process.env.NODE_ENV === 'production' ? '&minimize' : ''}`,
+            'postcss-loader'
+          ]
+        })
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|svg|ttf|woff|woff2)$/,
@@ -57,7 +60,11 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    ...(process.env.NODE_ENV === 'production' ? [new webpack.optimize.AggressiveMergingPlugin()] : [])
+    ...(process.env.NODE_ENV === 'production' ? [new webpack.optimize.AggressiveMergingPlugin()] : []),
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      allChunks: true
+    })
   ],
   optimization: {
     minimizer: [
