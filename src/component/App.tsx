@@ -1,6 +1,6 @@
 import * as cx from "classnames";
 import * as React from "react";
-import { HashRouter, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import { Application } from "./Application";
 import { Home } from "./Home";
 import { main } from "./main.css";
@@ -9,7 +9,7 @@ import * as styles from "./style.css";
 const navbarId = "globalNavBarId";
 
 const App = () => (
-  <HashRouter>
+  <BrowserRouter>
     <div>
       <header>
         <nav
@@ -42,7 +42,7 @@ const App = () => (
         </div>
       </footer>
     </div>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 const NotFound = () => (

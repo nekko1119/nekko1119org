@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const PORT = process.env.PORT || 8000;
+
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: path.join(__dirname, 'src', 'index'),
@@ -74,6 +76,7 @@ module.exports = {
   devServer: {
     contentBase: '.',
     publicPath: '/dist/',
-    inline: true
+    inline: true,
+    port: PORT,
   }
 };
